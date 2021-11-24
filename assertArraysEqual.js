@@ -13,9 +13,9 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-const assertArraysEqual = function (toVerify){
+const assertArraysEqual = function (array1, array2){
   
-  if (toVerify === true){
+  if (eqArrays(array1, array2) === true){
     console.log(`✅ Assertion Passed ✅`)
   }
   else {
@@ -23,4 +23,4 @@ const assertArraysEqual = function (toVerify){
   }
 }
 
-assertArraysEqual(eqArrays(["1", "2", 3], ["1", "2", "3"]));
+assertArraysEqual(["1", "2", 3], ["1", "2", "3"]);
