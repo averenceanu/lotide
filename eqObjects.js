@@ -6,7 +6,7 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-const eqArrays = function(array1, array2) {
+const eqArrays = function (array1, array2) {
   if (array1.length !== array2.length) {
     return (false);
   } else {
@@ -20,16 +20,20 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-
 const eqObjects = function (object1, object2) {
+  const keysOfObject1 = Object.keys(object1);
+  const keysOfObject2 = Object.keys(object2);
 
-  if (Object.keys(object1).length !== Object.keys(object2).length) {
+  if (keysOfObject1.length !== keysOfObject2.length) {
     return false;
 
   } else {
-    for (let i = 0; i < Object.values(object1).length; i++) {
-      
-      if (Object.values(object1)[i] !== Object.values(object2)[i]) {
+    for (key of keysOfObject1) {
+      if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+        if (eqArrays(object1[key], object2[key]) === false) {
+          return false;
+        }
+      } else if (object1[key] !== object2[key]) {
         return false;
       }
     }
@@ -37,9 +41,18 @@ const eqObjects = function (object1, object2) {
   return true;
 };
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-const cd2 = { c: "1", d: ["2", 3, 4] };
+const cd = {
+  c: "1",
+  d: ["2", 3]
+};
+const dc = {
+  d: ["2", 3],
+  c: "1"
+};
+const cd2 = {
+  c: "1",
+  d: ["2", 3, 4]
+};
 
 assertEqual(eqObjects(cd, dc), true);
 assertEqual(eqObjects(cd, cd2), false);
