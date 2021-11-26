@@ -8,7 +8,7 @@ const assertEqual = function (actual, expected) {
 
 
 const findKeyByValue = function (listToLook, elementToFind) {
-  for (element in listToLook) {
+  for (let element in listToLook) {
     if (listToLook[element] === elementToFind) {
       return element;
     } 
