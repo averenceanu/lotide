@@ -10,4 +10,4 @@ const tail = function(elements) {
 // tail(words);
 // assertEqual(words.length, 2);
 
-module.exports = tail; 
+module.exports = tail;

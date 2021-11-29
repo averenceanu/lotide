@@ -12,24 +12,23 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-const assertArraysEqual = function (array1, array2){
+const assertArraysEqual = function(array1, array2) {
   
-  if (eqArrays(array1, array2) === true){
-    console.log(`✅ Assertion Passed ✅`)
+  if (eqArrays(array1, array2) === true) {
+    console.log(`✅ Assertion Passed ✅`);
+  } else {
+    console.log(`‼️ Assertion Failed ‼️`);
   }
-  else {
-    console.log(`‼️ Assertion Failed ‼️`)
-  }
-}
+};
 
-const without = function (sources, itemsToRemove){
+const without = function(sources, itemsToRemove) {
   let cleanArray = [];
-  for (let source of sources){
+  for (let source of sources) {
     if (!itemsToRemove.includes(source)) {
-      cleanArray.push(source)
+      cleanArray.push(source);
     }
   }
-  return cleanArray; 
-}
+  return cleanArray;
+};
 
 assertArraysEqual(without([1, 2, 3], [1]) , [2, 3]);

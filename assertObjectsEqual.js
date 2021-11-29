@@ -1,4 +1,4 @@
-const eqArrays = function (array1, array2) {
+const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return (false);
   } else {
@@ -12,7 +12,7 @@ const eqArrays = function (array1, array2) {
   return true;
 };
 
-const eqObjects = function (object1, object2) {
+const eqObjects = function(object1, object2) {
   const keysOfObject1 = Object.keys(object1);
   const keysOfObject2 = Object.keys(object2);
 
@@ -33,12 +33,12 @@ const eqObjects = function (object1, object2) {
   return true;
 };
 
-const assertObjectsEqual = function (actual, expected) {
+const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;
   if (eqObjects(actual, expected)) {
     console.log(`✅ Assertion Passed ✅ : ${inspect(actual)} === ${inspect(expected)}`);
   } else {
-    console.log(`‼️ Assertion Failed ‼️ : ${inspect(actual)} !== ${inspect(expected)}`)
+    console.log(`‼️ Assertion Failed ‼️ : ${inspect(actual)} !== ${inspect(expected)}`);
   }
 };
 
@@ -51,4 +51,4 @@ const dc = {
   c: "1"
 };
 
-assertObjectsEqual(cd, dc)
+assertObjectsEqual(cd, dc);

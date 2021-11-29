@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅ Assertion Passed ✅: ${actual} === ${expected}`);
   } else if (actual !== expected) {
@@ -6,13 +6,13 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-const findKey = function (obj, cb) {
+const findKey = function(obj, cb) {
   for (let x in obj) {
     if (cb(obj[x])) {
       return x;
     }
-  };
-}
+  }
+};
 
 assertEqual(findKey({
   "Blue Hill": {
@@ -33,5 +33,5 @@ assertEqual(findKey({
   "Akelarre": {
     stars: 3
   }
-}, x => x.stars === 2), "noma")
+}, x => x.stars === 2), "noma");
 
