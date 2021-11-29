@@ -1,6 +1,9 @@
+const assert = require('chai').assert;
 const tail = require('../tail');
 const assertEqual = require('../assertEqual');
 
-const words = ["hebi", "fegege", "gege"];
-tail(words);
-assertEqual(words.length, 2);
+describe('tail function', () => {
+  it('should return [fegege, gege] when given "hebi", "fegege", "gege"]', () => {
+    assert.deepEqual(tail(["hebi", "fegege", "gege"]), ["fegege", "gege"])
+  });
+});
